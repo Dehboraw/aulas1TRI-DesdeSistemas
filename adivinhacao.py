@@ -1,26 +1,34 @@
 #importação da biblioteca
 import random
-# sorteio do número aleatório
-numero = random.randint(0,10)
-#TESTE
-print(numero)
+
+# Configurações do jogo
 tentativas = 1
-while (tentativas <= 3):
+errou = True #necessário criar a variável para comparar, se for False, ...., se for True acontece alguma coisa.
+sorteio_max = 10
+tentativas_max = 3
+numero = random.randint(0,sorteio_max)
+
+
+
+while (tentativas <= tentativas_max):
     print("Tentativa:",tentativas)
-    chute = int(input("Digite o seu chute (0 a 10): ")) #conversão para número inteiro, pois o input recebe os dados do usuário como tipo str.
+    chute = int(input("Digite o seu chute (0 a 10): ")) 
     if chute == numero:
         print("Parabéns, você é o bonzão mesmo")
-        break #para o while, para o bloco do laço
+        errou = False
+        break
+        
     else:
         if chute > numero :
             print("O número é menor")
         else:
             print("O número é maior")
-
     tentativas = tentativas + 1
-print("O número sorteado era:", numero)
+
+if errou == True:
+    print("O número sorteado era:", numero)
 print("### FIM DO JOGO ###")
 
-# Dizer para o usuário se o número era maior ou menor.
+
 
 
