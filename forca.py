@@ -1,5 +1,10 @@
-palavra = "KENNEDY" 
-letras_acertadas = ["_", "_", "_", "_" ,"_" , "_" , "_"]
+import random
+palavras = ["KENNEDY", "ESCOLA", "PYTHON", "JAVASCRIPT", "POMBO"]
+palavra = random.choice(palavras)
+letras_acertadas = []
+for letra in palavra:
+    letras_acertadas.append("_")
+    
 acertou = False
 enforcou = False
 limite_tentativas = 6 + len(palavra) # pareido com  .length do js
